@@ -27,22 +27,10 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$baizonn_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $baizonn_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $baizonn_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<!-- 这里调用你的 Logo 图片 -->
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.jpg" alt="Baizonn Learning Centre" style="max-height: 80px;">
+			</a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">

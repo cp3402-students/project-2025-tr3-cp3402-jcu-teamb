@@ -12,19 +12,10 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'baizonn-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'baizonn-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'baizonn-theme' ), 'baizonn-theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+        <div class="site-info" style="text-align: center; padding: 20px; background: #333; color: #fff;">
+            <p>&copy; <?php echo date("Y"); ?> Baizonn Learning Centre. All Rights Reserved.</p>
+            <p>1007A Upper Serangoon Road | Hotline: (+65) 62811816</p>
+        </div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
