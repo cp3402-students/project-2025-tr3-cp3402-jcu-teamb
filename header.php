@@ -28,7 +28,6 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<!-- 这里调用你的 Logo 图片 -->
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.jpg" alt="Baizonn Learning Centre" style="max-height: 80px;">
 			</a>
 		</div><!-- .site-branding -->

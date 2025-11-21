@@ -75,9 +75,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 */
 
-/* =========================================
-   1. 全局变量与基础重置 (Base)
-   ========================================= */
+/* Base */
 :root {
     --primary-blue: #003366;
     --primary-green: #4CAF50;
@@ -88,7 +86,7 @@ License: GNU General Public License v2 or later
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
-    line-height: 1.8; /* 增加行高，提升阅读体验 */
+    line-height: 1.8;
     margin: 0;
     background-color: #fff;
 }
@@ -106,58 +104,57 @@ img {
 }
 
 /* =========================================
-   2. 页面布局 (Layout)
+   2. Layout
    ========================================= */
 
-/* 全局内容容器：控制最大宽度和留白 */
+
 .site-content {
-    max-width: 1100px;      /* 限制最大宽度，防止在大屏幕上太宽 */
-    margin: 0 auto;         /* 居中 */
-    padding: 60px 40px;     /* 上下60px，左右40px (增加呼吸感) */
+    max-width: 1100px;      
+    margin: 0 auto;         
+    padding: 60px 40px;     
 }
 
-/* 隐藏所有页面的默认大标题 (显得更干净) */
 .page .entry-header,
 .home .entry-header {
     display: none;
 }
 
 /* =========================================
-   3. 头部与导航 (Header & Navigation)
+   3. Header & Navigation
    ========================================= */
 
-/* Header 容器：左右布局，白底阴影 */
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
     padding: 15px 40px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky; /* 吸顶效果 */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Logo 区域 */
+/* Logo */
 .site-branding {
     flex-shrink: 0;
     margin-right: 20px;
 }
 
 .site-branding img {
-    max-height: 60px; /* Logo 高度限制 */
+    max-height: 60px; 
     width: auto;
 }
 
-/* 导航菜单容器 */
+
 .main-navigation {
     width: 100%;
 }
 
 .main-navigation ul {
     display: flex;
-    justify-content: flex-end; /* 菜单靠右 */
+    justify-content: flex-end; 
     list-style: none;
     margin: 0;
     padding: 0;
@@ -168,7 +165,7 @@ img {
     position: relative;
 }
 
-/* 菜单文字样式 */
+
 .main-navigation a {
     color: #003366;
     font-weight: 700;
@@ -182,9 +179,9 @@ img {
     border-bottom: 2px solid #4CAF50;
 }
 
-/* 下拉菜单 (Sub-menu) */
+/* Sub-menu */
 .main-navigation ul ul {
-    display: none; /* 默认隐藏 */
+    display: none; 
     position: absolute;
     top: 100%;
     left: -20px;
@@ -197,7 +194,7 @@ img {
 }
 
 .main-navigation ul li:hover > ul {
-    display: flex; /* 悬停显示 */
+    display: flex; 
 }
 
 .main-navigation ul ul li {
@@ -208,7 +205,7 @@ img {
     padding: 10px 20px;
     font-size: 14px;
     color: #333;
-    text-transform: none; /* 下拉菜单不大写 */
+    text-transform: none; 
     border: none;
     display: block;
 }
@@ -218,16 +215,14 @@ img {
     color: #003366;
 }
 
-/* 隐藏默认手机菜单按钮 */
 button.menu-toggle {
     display: none !important;
 }
 
 /* =========================================
-   4. 通用组件 (Buttons, Tables, Forms)
+   4. Buttons, Tables, Forms
    ========================================= */
 
-/* 按钮 */
 .button, button, input[type="submit"] {
     background-color: var(--primary-green);
     color: white;
@@ -244,7 +239,7 @@ button.menu-toggle {
     background-color: #388E3C;
 }
 
-/* 表格 (Schedule页面) */
+/* Schedule */
 .schedule-section table {
     width: 100%;
     border-collapse: collapse;
@@ -269,7 +264,7 @@ button.menu-toggle {
 }
 
 /* =========================================
-   5. 师资页面 (Our Team)
+   5. Our Team
    ========================================= */
 .teachers-grid {
     display: flex;
@@ -288,14 +283,13 @@ button.menu-toggle {
 }
 
 .teacher-card:hover {
-    transform: translateY(-5px); /* 悬浮效果 */
+    transform: translateY(-5px); 
 }
 
 /* =========================================
-   6. 关于我们 (About Us) 深度美化
+   6. About Us Deep Styling
    ========================================= */
 
-/* --- 限制阅读宽度 --- */
 .about-intro p, 
 .awards-section p,
 .testimonials-section p {
@@ -305,7 +299,6 @@ button.menu-toggle {
     font-size: 1.05em;
 }
 
-/* --- 标题居中 --- */
 .about-intro h2, 
 .awards-section h3,
 .testimonials-section h3 {
@@ -315,17 +308,15 @@ button.menu-toggle {
     color: #003366;
 }
 
-/* --- 画廊 (Gallery) 优化 --- */
 .wp-block-gallery {
-    max-width: 900px;       /* 限制画廊最大宽度 */
+    max-width: 900px;       
     margin: 40px auto !important;
 }
 
 .wp-block-gallery.columns-3 {
-    gap: 20px;              /* 图片间距 */
+    gap: 20px;             
 }
 
-/* 画廊图片：圆角 + 阴影 + 悬停动画 */
 .wp-block-gallery figure img {
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
@@ -338,7 +329,6 @@ button.menu-toggle {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* --- 奖项图片优化 --- */
 .awards-images img {
     background: #fff;
     padding: 10px;
@@ -351,11 +341,8 @@ button.menu-toggle {
     transform: scale(1.05);
 }
 
-/* =========================================
-   🚑 终极修复：针对 About Us (Page ID 33)
-   ========================================= */
+/* Fix: Targeting About Us  */
 
-/* 1. 标题居中变蓝 (这部分你已经生效了，保留) */
 .page-id-33 h2, 
 .page-id-33 h3 {
     text-align: center !important;
@@ -363,96 +350,84 @@ button.menu-toggle {
     margin-top: 40px !important;
 }
 
-/* 2. 修复文字太靠这一行的问题 (你刚才提到的文字离容器太近) */
+
 .page-id-33 p {
-    max-width: 1200px;           /* 限制文字宽度，不要太宽 */
+    max-width: 1200px;           
     margin-left: auto !important;
     margin-right: auto !important;
-    text-align: center !important; /* 让中间那段奖项描述文字居中 */
-    padding: 0 20px;            /* 左右留点空隙 */
+    text-align: center !important; 
+    padding: 0 20px;            
 }
 
-/* 3. 重点修复：画廊图片不居中的问题 */
 .page-id-33 .wp-block-gallery {
-    display: flex !important;          /* 强制启用弹性布局 */
-    justify-content: center !important; /* 让里面的图片水平居中 */
-    flex-wrap: wrap !important;         /* 允许换行 */
-    margin: 20px auto 10px auto !important; /* 上20px，下10px，缩减间距 */       /* 让画廊容器本身上下有空隙，左右居中 */
-    max-width: 1200px !important;        /* 限制最大宽度 */
-    width: 100% !important;             /* 确保容器占位正常 */
+    display: flex !important;          
+    justify-content: center !important; 
+    flex-wrap: wrap !important;         
+    margin: 20px auto 10px auto !important; 
+    max-width: 1200px !important;      
+    width: 100% !important;           
 }
 
-/* 4. 修复图片之间的间距和样式 */
+
 .page-id-33 .wp-block-gallery figure.wp-block-image {
-    width: 300px;             /* 让图片宽度自适应 */
-    flex: 0 0 auto !important;          /* 禁止图片被拉伸 */
-    max-width: 300px;                   /* 限制单张图片大小，防止过大 */
+    width: 300px;            
+    flex: 0 0 auto !important;        
+    max-width: 300px;                 
 }
 
 .testimonials-section {
-    max-width: 1500px !important;   /* 限制最大宽度，和上面内容保持一致 */
-    margin-left: auto !important;   /* 左边自动留空 */
-    margin-right: auto !important;  /* 右边自动留空 */
-    padding-left: 40px;             /* 强制给左内侧留白 */
-    padding-right: 40px;            /* 强制给右内侧留白 */
-    box-sizing: border-box;         /* 确保内边距不会撑破容器 */
+    max-width: 1500px !important;   
+    margin-left: auto !important;   
+    margin-right: auto !important;  
+    padding-left: 40px;             
+    padding-right: 40px;           
+    box-sizing: border-box;        
 }
 
-/* 还可以顺便优化一下里面三个卡片的间距 */
+
 .testimonials-section > div {
-    gap: 40px !important; /* 增加卡片之间的间隙，让它们不要挨太近 */
+    gap: 40px !important; 
 }
 
-/* =========================================
-   Home Page 2.0 (新版首页样式)
-   ========================================= */
+/* Home Page */
 
-/* 1. Hero 区域文字增强 */
+/* 1. Hero */
 .hero-content h1 {
-    text-shadow: 0 2px 20px rgba(0,0,0,0.5); /* 强阴影，防止背景图太亮看不清字 */
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
-/* =========================================
-   Programs & Sub-pages 布局修复
-   ========================================= */
+/*Programs & Sub-pages */
 
-/* 1. 限制父页面和子页面的容器宽度，增加留白 */
 .programs-hub, 
 .program-detail-container {
-    max-width: 1100px !important;   /* 限制最大宽度 */
-    margin: 0 auto !important;      /* 强制居中 */
-    padding: 40px 40px !important;  /* 强制左右留白 */
+    max-width: 1100px !important;   
+    margin: 0 auto !important;      
+    padding: 40px 40px !important;  
 }
 
-/* 2. 子页面的介绍框美化 */
 .program-detail-container > div:first-of-type {
-    border-left: 5px solid; /* 加个左边框更有设计感 */
-    border-color: inherit;  /* 继承标题颜色（这行如果不生效就算了） */
+    border-left: 5px solid; 
+    border-color: inherit;  
 }
 
-/* 3. 收费卡片 (Fees) 阴影加强 */
 .program-detail-container div[style*="border: 2px solid"] {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* 加点阴影 */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
 }
 
-/* 4. 确保手机端不会太挤 */
 @media (max-width: 768px) {
     .program-detail-container {
-        padding: 30px 20px !important; /* 手机上留白稍微小一点 */
+        padding: 30px 20px !important; 
     }
     
     .program-grid > div {
-        min-width: 100% !important; /* 手机上卡片占满一行 */
+        min-width: 100% !important; 
     }
 }
 
-/* =========================================
-   Schedule 页面专属样式
-   ========================================= */
+/* Schedule */
 
-/* 1. 表格基础美化 */
 .table-wrapper {
-    overflow-x: auto; /* 让表格在手机上可以横向滚动，不撑破屏幕 */
+    overflow-x: auto; 
 }
 
 .schedule-group table {
@@ -460,7 +435,7 @@ button.menu-toggle {
     border-collapse: collapse;
     background: #fff;
     border-radius: 8px;
-    overflow: hidden; /* 确保圆角生效 */
+    overflow: hidden; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -475,7 +450,7 @@ button.menu-toggle {
 .schedule-group td {
     border-bottom: 1px solid #eee;
     padding: 15px 20px;
-    vertical-align: top; /* 文字顶部对齐 */
+    vertical-align: top; 
     font-size: 14px;
     line-height: 1.6;
 }
@@ -484,63 +459,55 @@ button.menu-toggle {
     border-bottom: none;
 }
 
-/* 2. 价格标签 (Price Tag) */
+/* Price Tag */
 .price-tag {
     display: block;
     margin-top: 8px;
     font-size: 0.9em;
     font-weight: bold;
     color: #fff;
-    background-color: #4CAF50; /* 默认绿色 (小学) */
+    background-color: #4CAF50;
     padding: 4px 10px;
     border-radius: 4px;
     width: fit-content;
 }
 
 .price-tag.blue {
-    background-color: #2196F3; /* 蓝色 (中学) */
+    background-color: #2196F3; 
 }
 
 .price-tag.purple {
-    background-color: #9C27B0; /* 紫色 (初院) */
+    background-color: #9C27B0; 
 }
 
-/* 3. 偶数行背景变色 */
 .schedule-group tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* =========================================
-   🚑 Schedule 页面布局与间距修复
-   ========================================= */
+/* Schedule fix */
 
-/* 1. 限制整个页面的宽度，和 About Us 页面保持一致 */
 .schedule-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 20px; /* 左右留白 */
+    padding: 40px 20px; 
 }
 
-/* 2. 增加表格之间的垂直间距 */
 .schedule-group {
-    margin-bottom: 60px; /* 每个年级的表格之间拉开距离 */
+    margin-bottom: 60px; 
 }
 
-/* 3. 修复促销横幅太宽、太挤的问题 */
 .promo-banner {
     max-width: 900px;
-    margin: 60px auto 0; /* 上面留空，左右居中 */
+    margin: 60px auto 0; 
     padding: 40px 20px;
-    box-shadow: 0 10px 30px rgba(233,30,99,0.15); /* 加个高级点的粉色阴影 */
+    box-shadow: 0 10px 30px rgba(233,30,99,0.15); 
 }
 
-/* 4. 优化表格内部的拥挤感 */
 .schedule-group td, 
 .schedule-group th {
-    padding: 20px 25px !important; /* 增加单元格内部的空间 */
+    padding: 20px 25px !important; 
 }
 
-/* 5. 手机端适配：如果屏幕太窄，让横幅里的卡片竖着排 */
 @media (max-width: 768px) {
     .promo-banner > div {
         flex-direction: column;
@@ -548,48 +515,43 @@ button.menu-toggle {
     }
 }
 
-/* =========================================
-   Contact & Registration 页面样式
-   ========================================= */
+/* Contact & Registration  */
 
-/* 1. 布局容器 */
 .contact-registration-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* 2. 表单输入框样式 */
 .baizonn-form input,
 .baizonn-form textarea {
     padding: 12px 15px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fff; /* 或者是 PDF 里的淡灰色 #f9f9f9 */
+    background-color: #fff; 
     font-size: 14px;
-    box-sizing: border-box; /* 极其重要：防止 padding 撑破宽度 */
+    box-sizing: border-box; 
 }
 
-/* 3. 第一行两列布局 (Name & Phone) */
+/* Name & Phone*/
 .form-row {
     display: flex;
     gap: 15px;
 }
 
 .form-row input {
-    width: 50%; /* 各占一半 */
+    width: 50%; 
 }
 
-/* 4. 发送按钮 (深蓝色圆角) */
 .submit-btn {
     width: 100%;
-    background-color: #2c5282; /* PDF 里的深蓝色 */
+    background-color: #2c5282;
     color: white;
     font-weight: bold;
     padding: 12px;
     border: none;
-    border-radius: 20px; /* 圆润一点 */
+    border-radius: 20px; 
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
@@ -600,10 +562,9 @@ button.menu-toggle {
     background-color: #1a365d;
 }
 
-/* 5. 手机适配 */
 @media (max-width: 600px) {
     .form-row {
-        flex-direction: column; /* 手机上姓名和电话变成两行 */
+        flex-direction: column; 
         gap: 0;
     }
     .form-row input {
@@ -611,31 +572,38 @@ button.menu-toggle {
     }
 }
 
-/* =========================================
-   Visit Us 页面微调
-   ========================================= */
+/* Visit Us */
 
-/* 1. 地图美化：圆角 + 阴影 */
+
 .visit-us-container .map-box img {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: none !important; /* 去掉原来可能有的丑边框 */
+    border: none !important; 
 }
 
-/* 2. 交通卡片等高对齐 */
+
 .transport-grid {
-    align-items: stretch; /* Flexbox 属性：让所有子元素高度拉伸一致 */
+    align-items: stretch; 
 }
 
 .trans-card {
-    height: 100%; /* 确保卡片占满父容器高度 */
+    height: 100%; 
     display: flex;
     flex-direction: column;
 }
 
-/* 让卡片里的内容也稍微舒展一点 */
 .trans-card ul, .trans-card p {
-    flex-grow: 1; /* 让内容填充剩余空间 */
+    flex-grow: 1; 
+}
+
+/* fix for active menu item*/
+
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-ancestor > a {
+    color: #4CAF50 !important;       
+    border-bottom: 2px solid #4CAF50; 
+    font-weight: bold;              
 }
 
 
